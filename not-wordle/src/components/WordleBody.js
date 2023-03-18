@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Grid from './Grid'
 import useGameLogicHook from './useGameLogicHook'
 import './WordleBodyStyles.css'
 import Keypad from './Keypad'
+import Modal from './Modal'
 
 export default function WordleBody({ solution }) {
   const { turn, currentGuess, guesses, isCorrect, handleKeyup, usedKeys } = useGameLogicHook(solution)
+  const [showModal, setShowModal] = useState(false)
 
     //  tracks everytime a users presses a key
     //  the return in there ensures that the event listener is discarded after we grab
@@ -16,9 +18,10 @@ export default function WordleBody({ solution }) {
             // if guess is correct, or turns > 5,
         // input is locked and game is over
         if(isCorrect || turn > 5){
-            console.log('congratulations')
+            setTimeout(()=> setShowModal(true), 2000)
             window.removeEventListener('keyup', handleKeyup)
         }
+
     
         return () => window.removeEventListener('keyup', handleKeyup)
         }, [handleKeyup, isCorrect, turn])
@@ -28,6 +31,7 @@ export default function WordleBody({ solution }) {
       {/* Pass in the following to Grid. Reasons explained in grid */}
       <Grid currentGuess={currentGuess} turn={turn} guesses={guesses} />
       <Keypad usedKeys={usedKeys} />
+      {showModal && <Modal isCorrect={isCorrect} turn={turn} solution={solution} />}
     </div>
   )
 }
