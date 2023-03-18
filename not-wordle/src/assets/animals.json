@@ -1,0 +1,155 @@
+{
+    "animals": [
+      {
+        "id": 1,
+        "name": "zebra"
+      },
+      {
+        "id": 2,
+        "name": "panda"
+      },
+      {
+        "id": 3,
+        "name": "koala"
+      },
+      {
+        "id": 4,
+        "name": "tiger"
+      },
+      {
+        "id": 5,
+        "name": "lemur"
+      },
+      {
+        "id": 6,
+        "name": "goose"
+      },
+      {
+        "id": 7,
+        "name": "rhino"
+      },
+      {
+        "id": 8,
+        "name": "llama"
+      },
+      {
+        "id": 9,
+        "name": "shark"
+      },
+      {
+        "id": 10,
+        "name": "whale"
+      },
+      {
+        "id": 11,
+        "name": "chimp"
+      },
+      {
+        "id": 12,
+        "name": "otter"
+      },
+      {
+        "id": 13,
+        "name": "human"
+      },
+      {
+        "id": 14,
+        "name": "moose"
+      },
+      {
+        "id": 15,
+        "name": "crane"
+      },
+      {
+        "id": 16,
+        "name": "camel"
+      },
+      {
+        "id": 17,
+        "name": "hyena"
+      },
+      {
+        "id": 18,
+        "name": "bison"
+      },
+      {
+        "id": 19,
+        "name": "eagle"
+      },
+      {
+        "id": 20,
+        "name": "gecko"
+      },
+      {
+        "id": 21,
+        "name": "horse"
+      },
+      {
+        "id": 22,
+        "name": "gibbon"
+      },
+      {
+        "id": 23,
+        "name": "macaw"
+      },
+      {
+        "id": 24,
+        "name": "mouse"
+      },
+      {
+        "id": 25,
+        "name": "sheep"
+      },
+      {
+        "id": 26,
+        "name": "wahoo"
+      },
+      {
+        "id": 27,
+        "name": "Otter"
+      },
+      {
+        "id": 28,
+        "name": "hippo"
+      },
+      {
+        "id": 29,
+        "name": "koala"
+      },
+      {
+        "id": 30,
+        "name": "lemur"
+      },
+      {
+        "id": 31,
+        "name": "skunk"
+      },
+      {
+        "id": 32,
+        "name": "squid"
+      },
+      {
+        "id": 33,
+        "name": "sloth"
+      },
+      {
+        "id": 34,
+        "name": "liger"
+      },
+      {
+        "id": 35,
+        "name": "heron"
+      },
+      {
+        "id": 36,
+        "name": "coati"
+      },
+      {
+        "id": 37,
+        "name": "adder"
+      }
+    ]
+
+}
+       
+  
