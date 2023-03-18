@@ -1,7 +1,7 @@
 import React from 'react'
 import './RowStyles.css'
 
-export default function Row({ guess }) {
+export default function Row({ guess, currentGuess }) {
 
   // Each passed in guess is a list of letter objects
   // Each time Row is called, if guess is undefined, the second
@@ -15,6 +15,24 @@ export default function Row({ guess }) {
             to make css easy. Output the letter through the key */}
         {guess.map((letter, index) => (
           <div key={index} className={letter.color}>{letter.key}</div>
+        ))}
+      </div>
+    )
+  }
+
+  if(currentGuess){
+    let letters = currentGuess.split('')
+
+    return(
+      <div className='row'>
+        {/* This fill in the letters that have been inputed by a user */}
+        {letters.map((letter,index) => (
+          <div key={index} className='filled'>{letter}</div>
+        ))}
+
+        {/* This fill in the rest of the empty boxes of the rows that havent had letters inputted in them */}
+        {[...Array(5 - letters.length)].map((_, index) => (
+          <div key={index}></div>
         ))}
       </div>
     )

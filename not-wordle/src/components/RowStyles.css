@@ -16,6 +16,28 @@
     font-weight: 900;
 }
 
+.row div.green{
+    background:#5ac85a;
+    border-color: #5ac85a;
+    color: #ffff
+}
+
+.row div.red{
+    background:#db1e1e;
+    border-color: #db1e1e;
+    color: #ffff
+}
+
+.row div.yellow{
+    background:#e2cc68;
+    border-color: #e2cc68;
+    color: #ffff
+}
+
+.row > div.filled{
+    border: 2px solid #000;
+}
+
 /* This is for the samsung galaxy fold
  The screen cant contain all of the row squares at 60px sq */
 

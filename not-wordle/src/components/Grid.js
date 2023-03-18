@@ -10,7 +10,15 @@ export default function Grid({ currentGuess, guesses, turn }) {
   return (
     <div className='wordle-grid'>
       {guesses.map((guess, index) =>{
-        return <Row key={index} guess={guess} />
+        // Each render of this map updates the rows
+        if (turn === index){
+          // This updates the current row. It renders each time the user inputs a new word
+          return <Row key={index} guess={guess} currentGuess={currentGuess} />
+        }
+        else{
+          // This updates the past rows. They are updated once because all the letters are know
+          return <Row key={index} guess={guess} />
+        }
       })}
     </div>
   )
