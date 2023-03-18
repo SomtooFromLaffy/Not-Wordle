@@ -1,0 +1,6 @@
+.wordle-grid{
+    display: grid;
+    gap: 10px;
+    width: 20%;
+    margin: 0 auto;
+}

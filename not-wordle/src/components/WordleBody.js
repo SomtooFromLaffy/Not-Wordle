@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Grid from './Grid'
 import useGameLogicHook from './useGameLogicHook'
 
 export default function WordleBody({ solution }) {
@@ -18,8 +19,9 @@ export default function WordleBody({ solution }) {
   }, [guesses, turn, isCorrect])
 
   return (
-    <div>
+    <div className='wordle-body'>
       <h1>{currentGuess}</h1>
+      <Grid currentGuess={currentGuess} turn={turn} guesses={guesses} />
     </div>
   )
 }
