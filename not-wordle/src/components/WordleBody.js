@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Grid from './Grid'
 import useGameLogicHook from './useGameLogicHook'
 import './WordleBodyStyles.css'
+import Keypad from './Keypad'
 
 export default function WordleBody({ solution }) {
   const { turn, currentGuess, guesses, isCorrect, handleKeyup } = useGameLogicHook(solution)
@@ -23,6 +24,7 @@ export default function WordleBody({ solution }) {
     <div className='wordle-body'>
       {/* Pass in the following to Grid. Reasons explained in grid */}
       <Grid currentGuess={currentGuess} turn={turn} guesses={guesses} />
+      <Keypad />
     </div>
   )
 }

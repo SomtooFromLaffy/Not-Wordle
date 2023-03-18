@@ -1,6 +1,9 @@
 .wordle-body{
     width:100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Did this to constrain the width of mobile devices. I feel its needless
