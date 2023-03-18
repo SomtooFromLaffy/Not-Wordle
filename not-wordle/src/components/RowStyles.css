@@ -15,3 +15,10 @@
     text-transform: uppercase;
     font-weight: 900;
 }
+
+@media screen and (max-width: 300px) {
+    .row div{
+        height: 40px;
+        width: 40px;
+    }
+}
