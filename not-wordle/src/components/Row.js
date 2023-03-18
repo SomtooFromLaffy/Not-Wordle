@@ -24,7 +24,7 @@ export default function Row({ guess, currentGuess }) {
     let letters = currentGuess.split('')
 
     return(
-      <div className='row'>
+      <div className='row current'>
         {/* This fill in the letters that have been inputed by a user */}
         {letters.map((letter,index) => (
           <div key={index} className='filled'>{letter}</div>

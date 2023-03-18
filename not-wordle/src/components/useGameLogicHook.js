@@ -43,6 +43,7 @@ const useGameLogicHook = (solution) => {
           // indexes dont match so return yellow
           else{
             tag = "yellow"
+            solutionList[index] = null
           }
         }
         return {key: letter, color : tag}
