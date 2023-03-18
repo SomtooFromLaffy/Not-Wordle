@@ -7,9 +7,9 @@ const useGameLogicHook = (solution) => {
     const [turn, setTurn] = useState(0) 
     // Keetrack of the current guess
     const [currentGuess, setCurrentGuess] = useState('')
-    // List of the letters in the string of the guess
-    const [guesses, setGuesses] = useState([])
-    // History of the guesses made by the player
+    // Player guesses as list of letter objects( containing state i.e color of the word )
+    const [guesses, setGuesses] = useState([...Array(6)])
+    // History of the guesses made by the player as strings(guesses as string instead of objects)
     const [history, setHistory] = useState([]) 
     // Correct state
     const [isCorrect, setIsCorrect] = useState(false)
@@ -54,7 +54,32 @@ const useGameLogicHook = (solution) => {
     // add a new guess to the guesses state
     // update the isCorrect state if the guess is correct
     // add one to the turn state
-    const addNewGuess = () => {
+    const addNewGuess = (formattedGuess) => {
+      if(currentGuess === solution){
+        setIsCorrect(true)
+      }
+      // Compare NN's function with mine //why not prevGuesses.push(formatted guess)
+      // maybe to keep it strict and avoid resulting if (array > 6guesses)statement 
+      // I see why but all the same
+      // Consider changing(my idea would work)
+      setGuesses((prevGuesses) => {
+        let newGuesses = [...prevGuesses]
+        newGuesses[turn] = formattedGuess
+        return newGuesses
+      })
+
+      // Samee here prev.push too
+      setHistory((prevHistory) => {
+        return[...prevHistory, currentGuess]
+      })
+
+      //Increase turn count
+      setTurn((prevTurn) => {
+        return prevTurn + 1
+      })
+
+      // Reset current guess
+      setCurrentGuess('')
   
     }
   
@@ -71,11 +96,13 @@ const useGameLogicHook = (solution) => {
         // check if the user has used more than 5 guesses
         // check if the word is in the previous guess list
         // check if the length of the guess is not equal to 5
+        //if all conditions are met 
         case "Enter":
           turn > 5 ? console.log("You used all your guesses") :
                      history.includes(currentGuess) ? console.log("You already guessed this") :
                      currentGuess.length !==5 ? console.log("Keep guessing quitter") :
-                     console.log(formatGuess())
+                     addNewGuess(formatGuess())
+                     //console.log(formatGuess())
 
           break;
 
