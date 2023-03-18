@@ -64,58 +64,37 @@ const useGameLogicHook = (solution) => {
     // NN destructures it and passes just the key
     // entry(consider in future projects)
     const handleKeyup = ({key}) => {
+      // Switch statement for 3 kinds of input
 
-      if(key==='Enter'){
-        // end of turn
-        // make sure current guess length == 5
-        // make sure it is not word from previous guess (people are weird)
-        // add guess to history of guesses
-        // update the count of tries
+      switch(key){
+        // When user pushes Enter
+        case "Enter":
+          turn > 5 ? console.log("You used all your guesses") :
+                     history.includes(currentGuess) ? console.log("You already guessed this") :
+                     currentGuess.length !==5 ? console.log("Keep guessing quitter") :
+                     console.log(formatGuess())
 
-        if(turn > 5){
-          console.log("You used all your guesses")
-          return
-        }
+          break;
 
-        if(history.includes(currentGuess)){
-          console.log("You used all your guesses")
-          return
-        }
-        
-        // make sure current guess length == 5 and not less
-        if(currentGuess.length !==5 ){
-          console.log("Keep guessing quitter")
-          return
-        }
-
-        const format = formatGuess()
-        console.log(format)
-      }
-
-      if(key === 'Backspace') {
-        // Checks if user calls backspace
-        // deletes the last character
-        setCurrentGuess((prev) =>{
-          return prev.slice(0, -1)
-        })
-
-        // bascially java return 0
-        return
-      }
-      
-      // check input is a letter and not special key
-      // regex  in if statement to ensure comment above
-
-      if(/^[A-Za-z]$/.test(key)){
-        // Make sure the number of inputs does not exceed 5
-        if(currentGuess.length < 5){
-          // Basically append new input letter if entire 
-          // word guess is less than 5
+        // Backspace to clear character
+        case "Backspace":
           setCurrentGuess((prev) => {
-            return prev + key
+            return prev.slice(0, -1)
           })
-        }
+
+          break;
+
+        // When user enters a regular letter, this cleans it and accepts(and updates the currentGuess) it or rejects it. 
+        default:
+          if(/^[A-Za-z]$/.test(key)){ 
+            if(currentGuess.length < 5){
+               setCurrentGuess((prev) => {return prev + key})
+            }
+          }
+      
       }
+
+      return
     }
 
     // Personal function  will update later
