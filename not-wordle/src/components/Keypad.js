@@ -3,7 +3,7 @@ import './KeypadStyles.css'
 import letterkeys from '../assets/keyletters.json'
 
 
-export default function Keypad() {
+export default function Keypad({ usedKeys}) {
   const [keypadLetters, setKeypadLetters] = useState(null)
 
   useEffect(() => {
@@ -11,14 +11,14 @@ export default function Keypad() {
     setKeypadLetters(keys)
     }, [])
 
-
-
-  console.log(keypadLetters)
   return (
     <div className='keypad'>
       {keypadLetters && keypadLetters.map((keypadLetter) => {
+        // update the colors, if a letter returns undefined as a color,
+        // no formatting is added
+        const color = usedKeys[keypadLetter['key']]
         return (
-            <div key={keypadLetter.key}> {keypadLetter.key} </div>
+            <div key={keypadLetter.key} className={color}> {keypadLetter.key} </div>
         )
       })}
     </div>

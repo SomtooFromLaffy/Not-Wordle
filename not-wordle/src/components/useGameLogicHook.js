@@ -13,6 +13,9 @@ const useGameLogicHook = (solution) => {
     const [history, setHistory] = useState([]) 
     // Correct state
     const [isCorrect, setIsCorrect] = useState(false)
+    // Update Keypad. each entry is an object with the letter as the key and color 
+    // as value
+    const [usedKeys, setUsedKeys] = useState({})
   
     // conevrt the list into objects with properties that denote the state of a letter
     // i.e present and in correct position(green), present and in wrong position{yellow}, wrong(red)
@@ -79,6 +82,45 @@ const useGameLogicHook = (solution) => {
         return prevTurn + 1
       })
 
+      //update the keypad
+      setUsedKeys((prevUsedKeys) => {
+        // tmp object as usual
+        let newKeys = {...prevUsedKeys}
+
+        formattedGuess.forEach((letter) => {
+          // get the old color. if letter doesn't exist in newKeys, Undefined is returned
+          const oldColor = newKeys['letter']
+          // get the latest color from the latest guess
+          const newColor = letter['color']
+
+          
+          switch(oldColor){
+            case "green":
+              // if its green, its green. Should not be changed
+              break;
+            
+            case "yellow":
+              // if its green, can't go back to yellow. User probably switchh a correctly placed letter
+              // or letter appears twice
+              if(newColor==="green"){
+                  newKeys[letter.key] = "green"
+              }
+              break;
+            
+            case "red":
+              // Once it is red, its red
+              break;
+
+            default:
+              // Returned undefined so we assign it its first color
+              newKeys[letter.key] = newColor
+          }
+
+        })
+
+        return newKeys
+      })
+
       // Reset current guess
       setCurrentGuess('')
   
@@ -133,7 +175,7 @@ const useGameLogicHook = (solution) => {
 
     // }
   
-    return {turn, currentGuess, guesses, isCorrect, handleKeyup}
+    return {turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup}
   }
 
 export default useGameLogicHook
