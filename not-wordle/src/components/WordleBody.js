@@ -4,6 +4,7 @@ import useGameLogicHook from './useGameLogicHook'
 import './WordleBodyStyles.css'
 import Keypad from './Keypad'
 import Modal from './Modal'
+import Footer from './Footer'
 
 export default function WordleBody({ solution }) {
   const { turn, currentGuess, guesses, isCorrect, handleKeyup, usedKeys } = useGameLogicHook(solution)

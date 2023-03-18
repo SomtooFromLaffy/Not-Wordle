@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height:85vh
 }
 
 /* Did this to constrain the width of mobile devices. I feel its needless
