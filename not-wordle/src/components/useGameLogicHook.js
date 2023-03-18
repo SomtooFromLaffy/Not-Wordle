@@ -68,6 +68,9 @@ const useGameLogicHook = (solution) => {
 
       switch(key){
         // When user pushes Enter
+        // check if the user has used more than 5 guesses
+        // check if the word is in the previous guess list
+        // check if the length of the guess is not equal to 5
         case "Enter":
           turn > 5 ? console.log("You used all your guesses") :
                      history.includes(currentGuess) ? console.log("You already guessed this") :
