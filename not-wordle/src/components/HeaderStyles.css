@@ -1,0 +1,19 @@
+header{
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px;
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 20px;
+}
+
+header h1{
+    font-size: 3em;
+    font-weight: 700;
+}
+/* Size is reduced for mobile devices */
+@media screen and (max-width: 740px) {
+    header h1{
+        font-size: 1.5em;
+    }
+}
