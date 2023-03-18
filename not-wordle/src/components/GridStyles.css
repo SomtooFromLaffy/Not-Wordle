@@ -5,6 +5,7 @@
     margin: 0 auto;
 }
 
+/* Grid needs to be wider on smaller screens */
 @media screen and (max-width: 1240px) {
     .wordle-grid{
         width: 95%;
