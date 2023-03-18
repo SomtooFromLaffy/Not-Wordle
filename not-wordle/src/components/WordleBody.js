@@ -10,15 +10,18 @@ export default function WordleBody({ solution }) {
     //  tracks everytime a users presses a key
     //  the return in there ensures that the event listener is discarded after we grab
     //  the value   
-  useEffect(() => {
-    window.addEventListener('keyup', handleKeyup)
-    return () => window.removeEventListener('keyup', handleKeyup)
-    }, [handleKeyup])
-
-    // Just outputing this to test game logic per guess
-  useEffect(() => {
-    console.log(guesses, turn, isCorrect)
-  }, [guesses, turn, isCorrect])
+    useEffect(() => {
+        window.addEventListener('keyup', handleKeyup)
+    
+            // if guess is correct, or turns > 5,
+        // input is locked and game is over
+        if(isCorrect || turn > 5){
+            console.log('congratulations')
+            window.removeEventListener('keyup', handleKeyup)
+        }
+    
+        return () => window.removeEventListener('keyup', handleKeyup)
+        }, [handleKeyup, isCorrect, turn])
 
   return (
     <div className='wordle-body'>
