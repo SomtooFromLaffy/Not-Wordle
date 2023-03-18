@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import  word_list from '../assets/animals.json'
+import WordleBody from '../components/WordleBody'
 
 const Wordlehome = () => {
   const [solution, setSolution] = useState(null)
@@ -15,7 +16,7 @@ const Wordlehome = () => {
   return (
     <div>
       <h1>Hello Wordle</h1>
-      {solution && <h1>{solution}</h1>}
+      {solution && <WordleBody solution = {solution}/>}
     </div>
   )
 }
