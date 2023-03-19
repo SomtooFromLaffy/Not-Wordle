@@ -21,7 +21,7 @@ const useGameLogicHook = (solution) => {
     // i.e present and in correct position(green), present and in wrong position{yellow}, wrong(red)
     // e.g. [{key: 'a', color: 'yellow'}]
     const formatGuess = () => {
-      console.log(currentGuess)
+      // console.log(currentGuess)
       // list out letters in the solution
       let solutionList = [...solution]
 
@@ -135,6 +135,7 @@ const useGameLogicHook = (solution) => {
       // Switch statement for 3 kinds of input
 
       switch(key){
+        
         // When user pushes Enter
         // check if the user has used more than 5 guesses
         // check if the word is in the previous guess list
@@ -169,11 +170,6 @@ const useGameLogicHook = (solution) => {
 
       return
     }
-
-    // Personal function  will update later
-    // const handleButtonPress = () =>{
-
-    // }
   
     return {turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup}
   }

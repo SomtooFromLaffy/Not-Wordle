@@ -3,8 +3,10 @@ import './KeypadStyles.css'
 import letterkeys from '../assets/keyletters.json'
 
 
-export default function Keypad({ usedKeys}) {
+export default function Keypad({ usedKeys, setButtonEntry}) {
   const [keypadLetters, setKeypadLetters] = useState(null)
+
+
 
   useEffect(() => {
     const keys = letterkeys['letters']
@@ -18,7 +20,7 @@ export default function Keypad({ usedKeys}) {
         // no formatting is added
         const color = usedKeys[keypadLetter['key']]
         return (
-            <div key={keypadLetter.key} className={color}> {keypadLetter.key} </div>
+            <button key={keypadLetter.key} className={color===undefined ? '' : color} type='submit' onClick={()=>{setButtonEntry(keypadLetter.key)}}>{keypadLetter.key}</button> 
         )
       })}
     </div>
