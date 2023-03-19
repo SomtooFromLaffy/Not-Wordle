@@ -23,7 +23,8 @@ export default function Modal({ isCorrect, turn, solution }) {
                 </div>
             )
         }
-      Modal
+
+     ``
     </div>
   )
 }
