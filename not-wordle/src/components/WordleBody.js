@@ -26,7 +26,7 @@ export default function WordleBody({ solution }) {
         if(isCorrect || turn > 5){
             setTimeout(()=> setShowModal(true), 2000)
             window.removeEventListener('keyup', handleKeyup)
-            // setButtonEntry(null)
+            setButtonEntry(null)
         }
 
     

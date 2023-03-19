@@ -158,6 +158,14 @@ const useGameLogicHook = (solution) => {
 
           break;
 
+          // Can't create backspace key so...
+        case "<":
+          setCurrentGuess((prev) => {
+            return prev.slice(0, -1)
+          })
+
+          break;
+
         // When user enters a regular letter, this cleans it and accepts(and updates the currentGuess) it or rejects it. 
         default:
           if(/^[A-Za-z]$/.test(key)){ 
