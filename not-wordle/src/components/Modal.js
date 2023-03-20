@@ -10,7 +10,7 @@ export default function Modal({ isCorrect, turn, solution }) {
                     <h1> You win. </h1>
                     <p> Imagine some confetti </p>
                     <p> The solution was <br/><span className='solution'>{solution}</span> </p>
-                    <p>Took you {turn}/5 tries</p>
+                    <p>Took you {turn}/6 tries</p>
                 </div>
             )
         }
