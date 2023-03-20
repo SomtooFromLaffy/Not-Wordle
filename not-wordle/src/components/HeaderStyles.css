@@ -5,6 +5,8 @@ header{
     padding: 10px;
     border-bottom: 1px solid #aaa;
     margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 header h1{
