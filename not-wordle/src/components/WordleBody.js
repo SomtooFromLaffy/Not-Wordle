@@ -10,13 +10,17 @@ export default function WordleBody({ solution }) {
   const { turn, currentGuess, guesses, isCorrect, handleKeyup, usedKeys } = useGameLogicHook(solution)
   const [showModal, setShowModal] = useState(false)
 
-  // 
+  // created so that a keypad button click on the webpage would be registered as state and passed to handle keyup
   const [buttonEntry, setButtonEntry] = useState(null)
 
 
     //  tracks everytime a users presses a key
     //  the return in there ensures that the event listener is discarded after we grab
     //  the value   
+
+    // Further modified to listen for a keypad entry. Also set to null immediately after receiving keypad
+    // entry so that next input can be processed immediately.
+    // Also does not process any button clicks after the 5 guesses
     useEffect(() => {
         handleKeyup({key : buttonEntry})
         window.addEventListener('keyup', handleKeyup)
@@ -38,6 +42,8 @@ export default function WordleBody({ solution }) {
     <div className='wordle-body'>
       {/* Pass in the following to Grid. Reasons explained in grid */}
       <Grid currentGuess={currentGuess} turn={turn} guesses={guesses} />
+
+      {/* Pass setButtonEntry to keypad so button clicks can alter the state */}
       <Keypad usedKeys={usedKeys} setButtonEntry={setButtonEntry}  />
       {showModal && <Modal isCorrect={isCorrect} turn={turn} solution={solution} />}
     </div>

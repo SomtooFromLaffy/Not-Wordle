@@ -158,7 +158,7 @@ const useGameLogicHook = (solution) => {
 
           break;
 
-          // Can't create backspace key so...
+          // Can't create backspace button for the keypad so...
         case "<":
           setCurrentGuess((prev) => {
             return prev.slice(0, -1)
