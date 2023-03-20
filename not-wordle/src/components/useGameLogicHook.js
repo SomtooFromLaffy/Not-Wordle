@@ -20,38 +20,69 @@ const useGameLogicHook = (solution) => {
     // conevrt the list into objects with properties that denote the state of a letter
     // i.e present and in correct position(green), present and in wrong position{yellow}, wrong(red)
     // e.g. [{key: 'a', color: 'yellow'}]
+    // -----------------------------Something is wrong with the logic. Can't test at this time so we go with NNs--------------
+    // const formatGuess = () => {
+    //   // console.log(currentGuess)
+    //   // list out letters in the solution
+    //   let solutionList = [...solution]
+
+    //   // list out letters in the guess and create an object
+    //   // with each letter as indicated in the comment above
+    //   let formattedGuess = [...currentGuess].map((letter, item) =>{
+    //     //Make all letters to be red
+    //     let tag = 'red'
+
+    //     //if the letter is in the solution go into the if else the letter
+    //     //remains red
+    //     if(solutionList.includes(letter)){
+    //       //get the index of the letter in the solution list
+    //       let index = solutionList.indexOf(letter)
+
+    //       // if the index is the same in both arrays the mark it as green
+    //       // also remove it from the array so that a similar letter in the 
+    //       // list, indexOf does not keep returning the one we have selected
+
+    //       if(index === item){
+    //         solutionList[index] = null
+    //         tag = 'green'
+    //       }
+
+    //       // indexes dont match so return yellow
+
+    //       else{
+    //         tag = "yellow"
+    //         solutionList[index] = null
+    //       }
+    //     }
+    //     return {key: letter, color : tag}
+    //   })
+
+    //   return formattedGuess
+    // }
+    // ----------------------------------------------------------------------------------------------------------------------------
+
     const formatGuess = () => {
-      // console.log(currentGuess)
-      // list out letters in the solution
-      let solutionList = [...solution]
-
-      // list out letters in the guess and create an object
-      // with each letter as indicated in the comment above
-      let formattedGuess = [...currentGuess].map((letter, item) =>{
-        //Make all letters to be red
-        let tag = 'red'
-
-        //if the letter is in the solution go into the if else the letter
-        //remains red
-        if(solutionList.includes(letter)){
-          //get the index of the letter in the solution list
-          let index = solutionList.indexOf(letter)
-          // if the index is the same in both arrays the mark it as green
-          // also remove it from the array so that a similar letter in the 
-          // list, indexOf does not keep returning the one we have selected
-          if(index === item){
-            solutionList[index] = null
-            tag = 'green'
-          }
-          // indexes dont match so return yellow
-          else{
-            tag = "yellow"
-            solutionList[index] = null
-          }
-        }
-        return {key: letter, color : tag}
+      let solutionArray = [...solution]
+      let formattedGuess = [...currentGuess].map((l) => {
+        return {key: l, color: 'red'}
       })
-
+  
+      // find any green letters
+      formattedGuess.forEach((l, i) => {
+        if (solution[i] === l.key) {
+          formattedGuess[i].color = 'green'
+          solutionArray[i] = null
+        }
+      })
+      
+      // find any yellow letters
+      formattedGuess.forEach((l, i) => {
+        if (solutionArray.includes(l.key) && l.color !== 'green') {
+          formattedGuess[i].color = 'yellow'
+          solutionArray[solutionArray.indexOf(l.key)] = null
+        }
+      })
+  
       return formattedGuess
     }
   
