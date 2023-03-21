@@ -11,6 +11,7 @@ export default function Modal({ isCorrect, turn, solution }) {
                     <p> Imagine some confetti </p>
                     <p><br/><span className='solution'>{solution}</span> </p>
                     <p>Took you {turn}/6 tries</p>
+
                 </div>
             )
         }
@@ -20,6 +21,7 @@ export default function Modal({ isCorrect, turn, solution }) {
                 <div>
                     <h1>You lose. </h1>
                     <p> The solution was <br/><span className='solution'>{solution}</span> </p>
+
                 </div>
             )
         }
