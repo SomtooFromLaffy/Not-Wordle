@@ -148,7 +148,28 @@
         "id": 37,
         "name": "adder"
       }
+    ],
+
+    "car_models": [
+      { "id": 1, "name": "sedan" },
+      { "id": 2, "name": "coupe" },
+      { "id": 3, "name": "hatch" },
+      { "id": 4, "name": "wagon" },
+      { "id": 5, "name": "civic" },
+      { "id": 6, "name": "focus" },
+      { "id": 7, "name": "camry" },
+      { "id": 8, "name": "prius" },
+      { "id": 9, "name": "volvo" },
+      { "id": 10, "name": "scion" },
+      { "id": 11, "name": "mazda" },
+      { "id": 12, "name": "tesla" },
+      { "id": 13, "name": "caddy" },
+      { "id": 14, "name": "cruze" }
+
     ]
+
+
+
 
 }
        

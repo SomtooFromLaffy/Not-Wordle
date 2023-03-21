@@ -4,7 +4,7 @@ import './HeaderStyles.css'
 function Header({ setCategory }) {
   // Header/Navbar for the project
   const changeCategory = (val) =>{
-    setCategory('animal')
+    setCategory('car_models')
   }
   return (
     <div>
