@@ -1,21 +1,26 @@
 import React from 'react'
+import Category from './Category'
 import './HeaderStyles.css'
 
-function Header({ setCategory }) {
+function Header({ setCategory, category}) {
   // Header/Navbar for the project
-  const changeCategory = (val) =>{
-    setCategory('car_models')
-  }
+
   return (
     <div>
       <header>
         <h1>Not-Wordle</h1>
+        {/* Cattegory addition to navbar */}
+        <Category setCategory = {setCategory} />
       </header>
+      {/* Displays the category to the user */}
+      <h4 className='cat'> Category is {category}</h4>
+      
 
-      <button onClick={changeCategory}> Hello </button>
+      {/* <button onClick={changeCategory}> Hello </button> */}
       
     </div>
   )
 }
 
 export default Header
+

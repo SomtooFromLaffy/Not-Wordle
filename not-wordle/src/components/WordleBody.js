@@ -10,6 +10,7 @@ export default function WordleBody({ solution }) {
   const { turn, currentGuess, guesses, isCorrect, handleKeyup, usedKeys } = useGameLogicHook(solution)
   const [showModal, setShowModal] = useState(false)
 
+
   // created so that a keypad button click on the webpage would be registered as state and passed to handle keyup
   const [buttonEntry, setButtonEntry] = useState(null)
 
@@ -39,7 +40,7 @@ export default function WordleBody({ solution }) {
         }, [handleKeyup, isCorrect, turn, buttonEntry])
 
   return (
-    <div className='wordle-body'>
+    <div className='wordle-body' >
       {/* Pass in the following to Grid. Reasons explained in grid */}
       <Grid currentGuess={currentGuess} turn={turn} guesses={guesses} />
 
