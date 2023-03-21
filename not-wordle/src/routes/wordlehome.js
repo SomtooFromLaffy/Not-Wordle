@@ -7,19 +7,21 @@ import Footer from '../components/Footer'
 
 const Wordlehome = () => {
   const [solution, setSolution] = useState(null)
+  const [category, setCategory] = useState('all')
 
   // Get a word upon re-render of the component and changes state to the 
   // current word. solution word at this time is generated randomly regardless
   // of category
   useEffect(() => {
+    console.log(category)
     const random_word = word_list['animals'][Math.floor(Math.random()*word_list['animals'].length)]
     console.log(random_word)
     setSolution(random_word['name'])
-  }, [setSolution])
+  }, [setSolution, category])
   return (
     <div>
-      <Header />
-      {solution && <WordleBody solution = {solution}/>}
+      <Header setCategory = {setCategory}/>
+      {solution && <WordleBody solution = {solution} />}
       <Footer />
     </div>
   )
