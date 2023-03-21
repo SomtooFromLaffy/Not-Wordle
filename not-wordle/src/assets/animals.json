@@ -153,8 +153,8 @@
     "car_models": [
       { "id": 1, "name": "sedan" },
       { "id": 2, "name": "coupe" },
-      { "id": 3, "name": "hatch" },
-      { "id": 4, "name": "wagon" },
+      { "id": 3, "name": "honda" },
+      { "id": 4, "name": "lexus" },
       { "id": 5, "name": "civic" },
       { "id": 6, "name": "focus" },
       { "id": 7, "name": "camry" },
@@ -164,12 +164,95 @@
       { "id": 11, "name": "mazda" },
       { "id": 12, "name": "tesla" },
       { "id": 13, "name": "caddy" },
-      { "id": 14, "name": "cruze" }
+      { "id": 14, "name": "crown" },
+      { "id": 15, "name": "cruze" },
+      { "id": 16, "name": "isuzu" },
+      { "id": 17, "name": "jetta" },
+      { "id": 18, "name": "rolls" },
+      { "id": 19, "name": "rover" },
+      { "id": 20, "name": "range" },
+      { "id": 21, "name": "supra" },
+      { "id": 22, "name": "yaris" }
 
+    ],
+
+    "alloys" : [
+      { "id": 1, "name": "brass" },
+      { "id": 2, "name": "invar" },
+      { "id": 3, "name": "monel" },
+      { "id": 4, "name": "steel" },
+      { "id": 5, "name": "terne" }
+
+    ],
+
+    "astronomy" : [
+      { "id": 1, "name": "comet" },
+      { "id": 2, "name": "star" },
+      { "id": 3, "name": "atlas" },
+      { "id": 4, "name": "orion" },
+      { "id": 5, "name": "titan" },
+      { "id": 6, "name": "duhbe" },
+      { "id": 7, "name": "haris" },
+      { "id": 8, "name": "lepus" }
+    ],
+
+    "boating" : [
+      { "id": 1, "name": "barge" },
+      { "id": 2, "name": "ferry" },
+      { "id": 3, "name": "kayak" },
+      { "id": 4, "name": "Skiff" },
+      { "id": 5, "name": "yatch" },
+      { "id": 6, "name": "canoe" }
+    ],
+
+    "cities": [
+      { "id": 1, "name": "abuja" },
+      { "id": 2, "name": "accra" },
+      { "id": 3, "name": "cairo" },
+      { "id": 4, "name": "dhaka" },
+      { "id": 5, "name": "dakar" },
+      { "id": 6, "name": "kabul" },
+      { "id": 7, "name": "lagos" },
+      { "id": 8, "name": "minsk" },
+      { "id": 9, "name": "rabat" },
+      { "id": 10, "name": "seoul" },
+      { "id": 11, "name": "tokyo" },
+      { "id": 12, "name": "hanoi" },
+      { "id": 13, "name": "kyoto" }
+    ],
+    
+    "countries" : [
+      { "id": 1, "name": "benin" },
+      { "id": 2, "name": "gabon" },
+      { "id": 3, "name": "egypt" },
+      { "id": 4, "name": "india" },
+      { "id": 5, "name": "haiti" },
+      { "id": 6, "name": "italy" },
+      { "id": 7, "name": "korea" },
+      { "id": 8, "name": "libya" },
+      { "id": 9, "name": "malta" },
+      { "id": 10, "name": "spain" },
+      { "id": 11, "name": "syria" },
+      { "id": 12, "name": "yemen" },
+      { "id": 13, "name": "qatar" },
+      { "id": 14, "name": "tibet" },
+      { "id": 15, "name": "wales" },
+      { "id": 16, "name": "japan" },
+      { "id": 17, "name": "congo" },
+      { "id": 18, "name": "nepal" }
+    ],
+
+    "musical_instruments" : [
+      { "id": 1, "name": "banjo" },
+      { "id": 2, "name": "cello" },
+      { "id": 3, "name": "flute" },
+      { "id": 4, "name": "organ" },
+      { "id": 5, "name": "piano" },
+      { "id": 6, "name": "sitar" },
+      { "id": 7, "name": "bugle" },
+      { "id": 8, "name": "bells" },
+      { "id": 9, "name": "chime" }
     ]
-
-
-
 
 }
        
